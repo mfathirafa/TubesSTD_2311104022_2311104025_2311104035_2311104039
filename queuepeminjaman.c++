@@ -73,3 +73,26 @@ void dequeuePeminjaman() {
         }
     }
 }
+
+//rezairawan
+void viewAntrianPerBuku() {
+    cout << "\nAntrian Peminjaman per Buku:\n";
+    map<string, vector<string>> antrianPerBuku;
+
+    // Mengelompokkan antrian berdasarkan buku
+    for (int i = 0; i < back; i++) {
+        antrianPerBuku[queuePeminjaman[i].buku].push_back(queuePeminjaman[i].nama);
+    }
+
+    // Menampilkan antrian per buku
+    for (const string& buku : listBuku) {
+        cout << buku << ":\n";
+        if (antrianPerBuku[buku].empty()) {
+            cout << "  Tidak ada\n";
+        } else {
+            for (int i = 0; i < antrianPerBuku[buku].size(); i++) {
+                cout << "  " << i + 1 << ". " << antrianPerBuku[buku][i] << endl;
+            }
+        }
+    }
+}
