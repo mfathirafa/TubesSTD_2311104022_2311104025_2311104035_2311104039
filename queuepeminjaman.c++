@@ -31,3 +31,5 @@ void tampilkanBuku() {
         cout << i + 1 << ". " << listBuku[i] << endl;
     }
 }
+
+ali ganteng
