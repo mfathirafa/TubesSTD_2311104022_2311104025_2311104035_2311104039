@@ -76,6 +76,17 @@ void dequeuePeminjaman() {
 }
 
 //rezairawan
+void viewAntrian() {
+    cout << "\nAntrian Peminjaman:\n";
+    if (isEmpty()) {
+        cout << "(Kosong)\n";
+    } else {
+        for (int i = 0; i < back; i++) {
+            cout << i + 1 << ". Nama: " << queuePeminjaman[i].nama << ", Buku: " << queuePeminjaman[i].buku << endl;
+        }
+    }
+}
+
 void viewAntrianPerBuku() {
     cout << "\nAntrian Peminjaman per Buku:\n";
     map<string, vector<string>> antrianPerBuku;
